@@ -1,0 +1,178 @@
+/* Simplified footer: 4 classes only */
+
+/* .site-footer{
+  background: #000;
+  color: #eee;
+  padding: 50px 40px 40px;
+  font-family: inherit;
+  position: relative;
+}
+
+
+.wrap{
+  display: flex;
+  gap: 60px;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+.col{
+  flex: 1;
+}
+
+.col h3{
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+}
+
+.col ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.col li{
+  margin-bottom: 12px;
+}
+
+.col a{
+  color: #bbb;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.col a:hover{
+  color: #fff;
+}
+
+.col p{
+  color: #bbb;
+  font-size: 14px;
+  margin: 0;
+}
+
+.bottom{
+  text-align: left;
+  color: #666;
+  font-size: 12px;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #333;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 768px){
+  .wrap{
+    flex-direction: column;
+    gap: 40px;
+  }
+} */
+
+/* --- FOOTER UTAMA --- */
+.site-footer{
+  position: relative; 
+  background: #1a1a1a; /* Background hitam gelap */
+  color: #f0f0f0; /* Teks putih lembut */
+  padding: 60px 40px 40px; 
+  font-family: inherit;
+}
+
+/* --- WRAPPER KOLOM (footer-inner di HTML Anda) --- */
+.footer-inner, .wrap { /* Tambahkan .footer-inner untuk mencocokkan HTML Anda */
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  justify-content: space-evenly; /* **PERBAIKAN: Mendorong semua kolom ke sisi kanan** */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 0; 
+  flex-direction: row; /* **Optional: Membalik urutan kolom agar kolom pertama tampil di kanan** */
+}
+
+/* --- KOLOM INDIVIDUAL (footer-column di HTML Anda) --- */
+.footer-column, .col { /* Tambahkan .footer-column untuk mencocokkan HTML Anda */
+  flex: 0 1 200px; /* Batasi lebar kolom agar rapi */
+  text-align: left; /* **PERBAIKAN: Konten di dalam kolom rata kanan** */
+}
+
+.footer-column h3, .col h3{
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 20px;
+  letter-spacing: 1px; 
+  text-transform: uppercase;
+  border-bottom: 2px solid #d4af37; /* Garis emas sebagai aksen */
+  padding-bottom: 8px;
+  width: fit-content;
+  /* margin-left: auto; Mendorong judul rata kanan */
+}
+
+.footer-column ul, .col ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column li, .col li{
+  margin-bottom: 10px;
+}
+
+.footer-column a, .col a{
+  color: #a0a0a0;
+  text-decoration: none; /* **PERBAIKAN: Menghilangkan underline (text-decoration: none)** */
+  font-size: 14px;
+  transition: color 0.3s, border-bottom 0.3s;
+  /* Styling menarik: tambahkan efek border tipis saat hover, bukan underline */
+  border-bottom: 1px solid transparent; 
+}
+
+.footer-column a:hover, .col a:hover{
+  color: #d4af37; /* Aksen emas */
+  border-bottom: 1px solid #d4af37; /* Garis tipis saat hover */
+}
+
+.footer-column p, .col p{
+  color: #a0a0a0;
+  font-size: 14px;
+  margin: 0;
+}
+
+/* --- BOTTOM BAR (Copyright) --- */
+.footer-bottom, .bottom { /* Tambahkan .footer-bottom untuk mencocokkan HTML Anda */
+  text-align: right; /* **PERBAIKAN: Teks copyright rata kanan** */
+  color: #666;
+  font-size: 12px;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #333;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* --- RESPONSIVE FIX --- */
+@media (max-width: 768px){
+  .footer-inner, .wrap {
+    flex-direction: column; 
+    gap: 40px;
+  }
+  .footer-column, .col{
+    text-align: left; /* Teks kembali rata kiri di mobile */
+    max-width: 100%;
+  }
+  .footer-column h3, .col h3 {
+      margin-left: 0; /* Kembalikan judul rata kiri */
+  }
+  .footer-bottom, .bottom{
+    text-align: left; /* Copyright kembali rata kiri di mobile */
+  }
+}

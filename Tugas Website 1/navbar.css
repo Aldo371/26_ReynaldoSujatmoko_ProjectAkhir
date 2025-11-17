@@ -1,0 +1,78 @@
+/*navbar*/
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 15px 30px;
+    border-bottom: 1px solid #eee;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* Right aligned group containing nav-links and login button */
+.nav-right{
+    margin-left: auto; /* push this group to the far right */
+    display:flex;
+    align-items:center;
+    gap:12px; /* small, consistent gap between links and login button */
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: #555;
+    font-size: 18px;
+    padding-bottom: 5px; /* Memberikan ruang untuk underline */
+    position: relative; /* Diperlukan untuk pseudo-element underline */
+    transition: all 0.3s ease; /* Transisi untuk hover */
+}
+
+/* Underline on hover/active */
+.nav-item::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #000; /* Warna underline */
+    left: 0;
+    bottom: 0;
+    transition: width 0.3s ease;
+}
+
+.nav-item:hover::after,
+.nav-item.active::after {
+    width: 100%;
+}
+
+.nav-item:hover,
+.nav-item.active {
+    font-weight: bold;
+    font-size: 19px; /* Sedikit membesar */
+    color: #000;
+}
+
+.login-btn {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: #555;
+}
